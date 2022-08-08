@@ -5,6 +5,5 @@ opencv-python
 imutils
 numpy
 scipy
-urllib
 matplotlib
 pandas
