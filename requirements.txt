@@ -1,0 +1,10 @@
+Flask==1.1.2
+gunicorn==20.1.0
+tensorflow
+opencv-python
+imutils
+numpy
+scipy
+urllib
+matplotlib
+pandas
