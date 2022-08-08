@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Python Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body class="bg-home">
+    <div class="bg-home">
+        <div class="overlay"></div>
+        <div class="container text-center">
+            <div class="row" style="height: 100vh;">
+                <div class="col-md-8 py-5 mx-auto card car-body my-auto">
+                    <h1 class="mb-5 py-5">Fruit Classification</h1>
+                    <form id="upload-form" action="/" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                        <label for="">upload Fruit(s)</label>
+                        <input type="file" class="form-control" name="file" multiple>
+                        </div>
+                        <input type="submit" class="btn btn-success" value="Classify">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="{{ url_for('static',filename='js/jquery-3.1.1.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.js')}}"></script>

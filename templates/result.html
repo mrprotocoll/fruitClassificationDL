@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center mb-2">Uploaded Fruits</h1>
+        <div class="content row shadow mb-5">
+
+            <!-- <div class="col-4 border fruit">
+                <img src=" {{url_for('static', filename='images/images.jpeg')}}" class="img-fluid fruit-img">
+                <div class="predictions mt-3">
+                    <h5><span class="text-success w-50">Fruit: </span> Orange</h5>
+                    <h5><span class="text-success">Quality: </span> Good</h5>
+                    <h5><span class="text-success">Size: </span> small</h5>
+                </div>
+            </div> -->
+            {% for x in range(counts) %}
+                <div class="col-6 border">
+                    <img src="{{url_for('send_image', filename=image_names[x])}}" class="img-fluid fruit-img">
+                    <div class="predictions mt-3">
+                        <h5><span class="text-success w-50">Fruit: </span> {{texts[x][0]}}</h5>
+                        <h5><span class="text-success">Quality: </span> {{texts[x][1]}}</h5>
+                        <h5><span class="text-success">Size: </span> {{sizes[x]}}</h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="btn btn-success btn-block btn-large" href="/" role="button">Classify More Fruits</a>
+    </div>
+
+</body>
+</html>
+<script src="{{ url_for('static',filename='js/jquery-3.1.1.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.js')}}"></script>
